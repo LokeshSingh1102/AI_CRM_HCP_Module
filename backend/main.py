@@ -13,7 +13,6 @@ graph = build_graph()
 INTERACTIONS_DB = []
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-print("API KEY:", GROQ_API_KEY)
 
 app.add_middleware(
     CORSMiddleware,
