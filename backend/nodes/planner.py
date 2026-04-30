@@ -22,13 +22,13 @@ def planner_node(state):
 
     Rules:
     - If user describes interaction → log
-    - If user edits something → edit
+    - If user edits/change something → edit
     - If user asks summary/outcome → outcome
     - If user asks next steps → followup
     - If user mentions concern, issue, objection → use "objection"
 
     Return ONLY one:
-    log OR edit OR outcome OR followup
+    log OR edit OR next steps OR outcome OR followup OR objection
     """
 
     decision = llm.invoke(prompt).content.strip().lower()

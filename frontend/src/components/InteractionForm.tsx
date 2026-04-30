@@ -1,6 +1,5 @@
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { setInteraction } from "../redux/interactionSlice";
-import axios from 'axios'
 
 
 const Section = ({ title, children }: any) => (
@@ -60,9 +59,9 @@ const InteractionForm = () => {
             dispatch(setInteraction({ [e.target.name]: e.target.value }))
           }
         >
-          <option value="positive">😊 Positive</option>
-          <option value="neutral">😐 Neutral</option>
-          <option value="negative">☹️ Negative</option>
+          <option value="Positive">😊 Positive</option>
+          <option value="Neutral">😐 Neutral</option>
+          <option value="Negative">☹️ Negative</option>
         </select>
       </Section>
 
@@ -92,21 +91,17 @@ const InteractionForm = () => {
         />
       </div>
 
+      {/* Objections */}
       <div>
         <h3>Objections</h3>
         <textarea className="w-full border p-2 rounded" value={data.objections || ""} />
       </div>
 
+      {/* Insights */}
       <div>
         <h3>Insights</h3>
         <textarea className="w-full border p-2 rounded" value={data.insights || ""} />
       </div>
-
-      {/* <button onClick={handleSave}>
-        {data.id ? "Update" : "Save"}
-      </button> */}
-
-
 
       <button className="mt-4 w-full bg-blue-600 text-white py-2 rounded">
         Save Interaction

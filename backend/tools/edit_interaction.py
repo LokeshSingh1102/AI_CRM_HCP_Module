@@ -38,7 +38,7 @@ def edit_interaction_tool(input_text: str, current_data: dict):
 
     content = re.sub(r"```(?:json)?", "", content)
     content = content.replace("```", "").strip()
-
+    print(content)
     try:
         return json.loads(content)
     except:
